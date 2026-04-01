@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | MILOU ENNASRI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #080808;
+            --accent-red: #ff3030;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background Glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10%; right: -10%;
+            width: 400px; height: 400px;
+            background: var(--accent-red);
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 80px 0;
+        }
+
+        .hero-text h1 { font-size: 64px; font-weight: 800; line-height: 1; margin-bottom: 10px; }
+        .hero-text h2 { font-size: 24px; color: var(--accent-red); margin-bottom: 20px; text-transform: uppercase; }
+        
+        .hero-img {
+            width: 300px; height: 300px;
+            border-radius: 20px;
+            border: 2px solid var(--accent-red);
+            object-fit: cover;
+            box-shadow: 0 0 30px rgba(255, 48, 48, 0.2);
+        }
+
+        /* --- SECTION STYLING --- */
+        section { margin-bottom: 80px; }
+        h2.section-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        h2.section-title::after { content: ''; height: 2px; flex: 1; background: var(--glass-border); }
+
+        /* --- GRID CARDS (Skills) --- */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        ul, ol { list-style-position: inside; color: var(--text-dim); }
+        li { margin-bottom: 8px; }
+
+        /* --- PROFESSIONAL TABLE --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--glass);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+        th, td { padding: 20px; text-align: left; border-bottom: 1px solid var(--glass-border); }
+        th { background: rgba(255, 48, 48, 0.1); color: var(--accent-red); text-transform: uppercase; font-size: 14px; }
+        tfoot td { font-style: italic; color: var(--text-dim); text-align: center; }
+
+        /* --- CONTACT FORM --- */
+        form {
+            display: grid;
+            gap: 20px;
+            max-width: 700px;
+        }
+        fieldset { border: 1px solid var(--glass-border); padding: 25px; border-radius: 15px; background: var(--glass); }
+        legend { padding: 0 10px; color: var(--accent-red); font-weight: bold; }
+        
+        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            background: #151515;
+            border: 1px solid #333;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        input:focus { border-color: var(--accent-red); outline: none; }
+
+        .btn-submit {
+            background: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        /* Links */
+        .links-row { display: flex; gap: 20px; flex-wrap: wrap; }
+        .links-row a {
+            color: var(--text-main);
+            text-decoration: none;
+            background: var(--glass);
+            padding: 10px 20px;
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .links-row a:hover { border-color: var(--accent-red); color: var(--accent-red); }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .skills-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="hero">
+            <div class="hero-text">
+                <h2>Développeur Web</h2>
+                <h1>Mon Portfolio</h1>
+                <p>Je m'appelle <b>MR MILOU</b>. Mon objectif est de devenir un développeur professionnel compétent et créatif. <mark style="background: var(--accent-red); color: white; padding: 2px 5px;">AMBITIOUS AF</mark></p>
+            </div>
+            <img src="c:\Users\achra\Downloads\WhatsApp Image 2026-02-25 at 11.44.17.jpeg" class="hero-img" alt="Photo de profil">
+        </header>
+
+        <section>
+            <h2 class="section-title">Compétences</h2>
+            <div class="skills-container">
+                <div class="card">
+                    <h3>Techniques</h3>
+                    <ul type="square">
+                        <li>HTML / CSS</li>
+                        <li>JavaScript</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Qualités</h3>
+                    <ol type="I">
+                        <li>Organisation</li>
+                        <li>Esprit d'équipe</li>
+                        <li>Autonomie</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Parcours Académique</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Année</th>
+                        <th>Diplôme</th>
+                        <th>Établissement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024</td>
+                        <td>Baccalauréat</td>
+                        <td>Lycee Med6</td>
+                    </tr>
+                    <tr>
+                        <td>2025 - 2026</td>
+                        <td>Génie Informatique</td>
+                        <td>EMSI</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Formation en cours de perfectionnement</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section>
+            <h2 class="section-title">Réseau & Contact</h2>
+            <div class="links-row">
+                <a href="https://emsi.ma/">Etablissement</a>
+                <a href="mailto:shikidesu9@gmail.com">Mon email</a>
+                <a href="https://www.google.com">Google</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Me Contacter</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Identité</legend>
+                    <label>Nom Complet</label>
+                    <input type="text" name="nom" placeholder="Votre nom...">
+                    
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="email@exemple.com">
+                    
+                    <label>Genre</label>
+                    <div style="display: flex; gap: 15px;">
+                        <span><input type="radio" name="genre" style="width: auto;"> Homme</span>
+                        <span><input type="radio" name="genre" style="width: auto;"> Femme</span>
+                        <span><input type="radio" name="genre" style="width: auto;"> Other</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Message</legend>
+                    <label>Sujet</label>
+                    <select name="sujet">
+                        <option>Demande d'information</option>
+                        <option>Proposition de stage</option>
+                        <option>Autre</option>
+                    </select>
+                    
+                    <label>Message</label>
+                    <textarea name="message" rows="5" placeholder="Votre message..."></textarea>
+                    
+                    <label>CV (Format PDF)</label>
+                    <input type="file" name="cv">
+                </fieldset>
+
+                <div>
+                    <input type="submit" value="Envoyer le message" class="btn-submit">
+                    <input type="reset" value="Réinitialiser" style="background: transparent; border: none; color: var(--text-dim); cursor: pointer; margin-left: 15px;">
+                </div>
+            </form>
+        </section>
+    </div>
+
+</body>
+</html>
